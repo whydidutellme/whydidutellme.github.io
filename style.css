@@ -1,0 +1,103 @@
+
+    <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'pretendard', sans-serif;
+      font-weight: 400;  /* 400=normal, 500=medium, 700=bold */
+      background-color: #f0f0f0;
+      color: #181818;
+    }
+
+    header {
+      background-color: #f0f0f0;
+      border-bottom: 1px solid #f0f0f0;
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: normal;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: #555;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover { color: #000; }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      font-weight: normal;
+      margin-bottom: 16px;
+      letter-spacing: 3px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #777;
+      letter-spacing: 1px;
+    }
+
+    .section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .section h3 {
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      margin-bottom: 32px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e0e0e0;
+      font-weight: normal;
+    }
+
+    .post-list { list-style: none; }
+
+    .post-list li {
+      padding: 16px 0;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .post-list a {
+      text-decoration: none;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    .post-list a:hover { color: #000; text-decoration: underline; }
+
+    .post-list .date {
+      font-size: 0.8rem;
+      color: #aaa;
+      letter-spacing: 1px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 0.8rem;
+      color: #aaa;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 60px;
+    }
+  </style>
+
