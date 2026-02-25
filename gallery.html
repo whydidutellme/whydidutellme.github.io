@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>갤러리 — MY SITE</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; background-color: #fafaf8; color: #333; }
+    header { background-color: #fff; border-bottom: 1px solid #e0e0e0; padding: 24px 40px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { font-size: 1.4rem; font-weight: normal; letter-spacing: 2px; }
+    nav a { margin-left: 24px; text-decoration: none; color: #555; font-size: 0.9rem; letter-spacing: 1px; }
+    nav a:hover { color: #000; }
+    .section { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+    .section h3 { font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 32px; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0; font-weight: normal; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .grid img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .grid img:hover { opacity: 0.8; }
+
+    /* 클릭하면 크게 보이는 lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 90%; max-height: 90vh; object-fit: contain; }
+    .lightbox-close {
+      position: fixed;
+      top: 24px; right: 32px;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #aaa; border-top: 1px solid #e0e0e0; margin-top: 60px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MY SITE</h1>
+    <nav>
+      <a href="index.html">홈</a>
+      <a href="posts.html">글</a>
+      <a href="gallery.html">갤러리</a>
+      <a href="guestbook.html">방명록</a>
+    </nav>
+  </header>
+
+  <div class="section">
+    <h3>GALLERY</h3>
+    <div class="grid">
+      <!-- 이미지 추가하는 방법:
+           1. images 폴더에 이미지 파일 넣기
+           2. 아래처럼 img 태그 추가하기
+           예시: <img src="images/사진이름.jpg" onclick="openLightbox(this)"> -->
+      <img src="images/test.jpg" onclick="openLightbox(this)">
+      <img src="images/sample2.jpg" onclick="openLightbox(this)">
+      <img src="images/sample3.jpg" onclick="openLightbox(this)">
+    </div>
+  </div>
+
+  <!-- lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">✕</span>
+    <img id="lightbox-img" src="">
+  </div>
+
+  <footer>© 2025 MY SITE</footer>
+
+  <script>
+    function openLightbox(imgEl) {
+      document.getElementById('lightbox-img').src = imgEl.src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>
